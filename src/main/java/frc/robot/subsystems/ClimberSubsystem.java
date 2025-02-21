@@ -19,7 +19,7 @@ public class ClimberSubsystem extends SubsystemBase {
      */
     public ClimberSubsystem () {
 
-    // Set up the climb motor as a brushless motor
+    // Set up the climb motor as a brushless motor (originally everybot uses brushed motors)
     climbMotor = new SparkMax(ClimberConstants.CLIMBER_MOTOR_ID, MotorType.kBrushless);
 
     // Set can timeout. Because this project only sets parameters once on
