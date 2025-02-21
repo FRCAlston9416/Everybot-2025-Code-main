@@ -57,8 +57,7 @@ public final class Constants {
     public static final double CLIMBER_SPEED_UP = 0.5;
   }
 
-  public static final class OperatorConstants {
+  public static final class DriverConstants {
     public static final int DRIVER_CONTROLLER_PORT = 0;
-    public static final int OPERATOR_CONTROLLER_PORT = 1;
   }
 }
