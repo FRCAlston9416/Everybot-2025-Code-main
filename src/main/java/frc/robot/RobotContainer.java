@@ -118,7 +118,7 @@ public class RobotContainer {
      * make sure not to run the arm too long or it may get upset!
      */
     m_driverController.leftBumper().whileTrue(new ArmUpCommand(m_arm));
-    m_driverController.leftTrigger(.2).whileTrue(new ArmDownCommand(m_arm));
+    m_driverController.leftTrigger().whileTrue(new ArmDownCommand(m_arm));
 
     /**
      * Used to score coral, the stack command is for when there is already coral

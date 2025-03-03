@@ -34,6 +34,7 @@ public class RollerSubsystem extends SubsystemBase {
     rollerConfig.voltageCompensation(RollerConstants.ROLLER_MOTOR_VOLTAGE_COMP);
     rollerConfig.smartCurrentLimit(RollerConstants.ROLLER_MOTOR_CURRENT_LIMIT);
     rollerConfig.idleMode(IdleMode.kBrake);
+    rollerConfig.inverted(true);
     rollerMotor.configure(rollerConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 
@@ -49,6 +50,7 @@ public class RollerSubsystem extends SubsystemBase {
      */
     public void runRoller(double speed){
         rollerMotor.set(speed);
+        
     }
 
 }
