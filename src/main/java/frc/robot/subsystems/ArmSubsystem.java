@@ -1,18 +1,23 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.spark.SparkMax;
+import com.revrobotics.RelativeEncoder;
 import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
 
+import edu.wpi.first.math.MathUtil;
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ArmConstants;
 
 public class ArmSubsystem extends SubsystemBase {
 
     private final SparkMax armMotor;
+    private PIDController pid;
+    private RelativeEncoder encoder;
     
     /**
      * This subsytem that controls the arm.
@@ -36,6 +41,9 @@ public class ArmSubsystem extends SubsystemBase {
     armConfig.smartCurrentLimit(ArmConstants.ARM_MOTOR_CURRENT_LIMIT);
     armConfig.idleMode(IdleMode.kBrake);
     armMotor.configure(armConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+
+    pid = new PIDController(0.05, 0, 0);
+    encoder = armMotor.getEncoder();
     }
 
     @Override
@@ -49,5 +57,11 @@ public class ArmSubsystem extends SubsystemBase {
      */
     public void runArm(double speed){
         armMotor.set(speed);
+    }
+
+    public void setArmTo(double position){
+        double speed = MathUtil.clamp(pid.calculate(encoder.getPosition(), position), -0.2, 0.2);
+        armMotor.set(speed);
+
     }
 }

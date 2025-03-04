@@ -6,11 +6,14 @@ package frc.robot.commands;
 
 import frc.robot.Constants.ArmConstants;
 import frc.robot.subsystems.ArmSubsystem;
+import edu.wpi.first.math.MathUtil;
+import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An ArmUpCommand that uses an Arm subsystem. */
 public class ArmUpCommand extends Command {
   private final ArmSubsystem m_arm;
+
 
   /**
    * Powers the arm up, when finished passively holds the arm up.
@@ -32,7 +35,8 @@ public class ArmUpCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_arm.runArm(ArmConstants.ARM_SPEED_UP);
+    //m_arm.runArm(ArmConstants.ARM_SPEED_UP);
+    m_arm.setArmTo(0);
   }
 
   // Called once the command ends or is interrupted.
