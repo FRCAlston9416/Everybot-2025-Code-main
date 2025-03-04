@@ -25,8 +25,8 @@ public final class Constants {
 
     public static final int DRIVE_MOTOR_CURRENT_LIMIT = 60;
     public static final double DRIVE_MOTOR_VOLTAGE_COMP = 12;
-    public static final double SLOW_MODE_MOVE = 0.6;
-    public static final double SLOW_MODE_TURN = 0.6;
+    public static final double SLOW_MODE_MOVE = 0.2;
+    public static final double SLOW_MODE_TURN = 0.2;
   }
 
   public static final class RollerConstants {
@@ -45,8 +45,8 @@ public final class Constants {
     public static final double ARM_MOTOR_VOLTAGE_COMP = 10;
     public static final double ARM_SPEED_DOWN = -0.1;
     public static final double ARM_SPEED_UP = 0.1;
-    public static final double ARM_HOLD_DOWN = 0;
-    public static final double ARM_HOLD_UP = 0;
+    public static final double ARM_HOLD_DOWN = -0;
+    public static final double ARM_HOLD_UP = 0.05;
   }
 
   public static final class ClimberConstants {

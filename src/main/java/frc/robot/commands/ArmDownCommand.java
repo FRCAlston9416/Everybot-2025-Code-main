@@ -33,8 +33,8 @@ public class ArmDownCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // m_arm.runArm(ArmConstants.ARM_SPEED_DOWN);
-    m_arm.setArmTo(-8);
+    m_arm.runArm(ArmConstants.ARM_SPEED_DOWN);
+    // m_arm.setArmTo(-8);
   }
 
   // Called once the command ends or is interrupted.
