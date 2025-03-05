@@ -42,7 +42,7 @@ public class ArmSubsystem extends SubsystemBase {
     armConfig.idleMode(IdleMode.kBrake);
     armMotor.configure(armConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
-    pid = new PIDController(0.05, 0, 0);
+    pid = new PIDController(0.3, 0, 0);
     encoder = armMotor.getEncoder();
     }
 
