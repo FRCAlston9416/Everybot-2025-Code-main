@@ -117,8 +117,8 @@ public class RobotContainer {
      * The arm will be passively held up or down after this is used,
      * make sure not to run the arm too long or it may get upset!
      */
-    m_driverController.leftBumper().whileTrue(new ArmUpCommand(m_arm));
-    m_driverController.leftTrigger().whileTrue(new ArmDownCommand(m_arm));
+    m_driverController.pov(90).whileTrue(new ArmUpCommand(m_arm));
+    m_driverController.pov(270).whileTrue(new ArmDownCommand(m_arm));
 
     /**
      * Used to score coral, the stack command is for when there is already coral

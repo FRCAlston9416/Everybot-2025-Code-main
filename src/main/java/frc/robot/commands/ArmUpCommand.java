@@ -36,7 +36,7 @@ public class ArmUpCommand extends Command {
   @Override
   public void execute() {
     //m_arm.runArm(ArmConstants.ARM_SPEED_UP);
-    m_arm.setArmTo(2);
+    m_arm.setArmTo(0);
   }
 
   // Called once the command ends or is interrupted.
