@@ -4,6 +4,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.DriverConstants;
 import frc.robot.autos.DriveForwardAuto;
@@ -64,6 +65,8 @@ public class RobotContainer {
     m_chooser.setDefaultOption("Coral Auto", m_simpleCoralAuto);
     m_chooser.addOption("Drive Forward Auto", m_driveForwardAuto);
     SmartDashboard.putData(m_chooser);
+    CameraServer.startAutomaticCapture();
+
   }
 
   /**
@@ -111,7 +114,7 @@ public class RobotContainer {
     m_driverController.rightBumper().whileTrue(new AlgieInCommand(m_roller));
     
     // Here we use a trigger as a button when it is pushed past a certain threshold
-    m_driverController.rightTrigger(.2).whileTrue(new AlgieOutCommand(m_roller));
+    m_driverController.rightTrigger(0.2).whileTrue(new AlgieOutCommand(m_roller));
 
     /**
      * The arm will be passively held up or down after this is used,

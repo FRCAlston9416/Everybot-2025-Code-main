@@ -53,8 +53,8 @@ public final class Constants {
     public static final int CLIMBER_MOTOR_ID = 7;
     public static final int CLIMBER_MOTOR_CURRENT_LIMIT = 60;
     public static final double CLIMBER_MOTOR_VOLTAGE_COMP = 12;
-    public static final double CLIMBER_SPEED_DOWN = -0.5;
-    public static final double CLIMBER_SPEED_UP = 0.5;
+    public static final double CLIMBER_SPEED_DOWN = -1.6;
+    public static final double CLIMBER_SPEED_UP = 1.6;
   }
 
   public static final class DriverConstants {
