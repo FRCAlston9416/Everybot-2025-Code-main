@@ -89,10 +89,13 @@ public class DriveSubsystem extends SubsystemBase {
    * @param squared do you square the inputs from the controller
    */
   public void driveArcade(double xSpeed, double zRotation, boolean squared) {
-    drive.arcadeDrive(xSpeed, zRotation, squared);
-    
+      double maxTurnSpeed = 0.5; // Maximum turning speed (adjust between 0 and 1)
+      zRotation = Math.max(-maxTurnSpeed, Math.min(maxTurnSpeed, zRotation));
+      drive.arcadeDrive(xSpeed, zRotation, squared);
   }
 
+
+  
   /**
    * Use this to drive the robot, with one stick controlling one 
    * side of the drivetrain and the other stick controlling the other.

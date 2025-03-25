@@ -46,15 +46,15 @@ public final class Constants {
     public static final double ARM_SPEED_DOWN = -0.1;
     public static final double ARM_SPEED_UP = 0.1;
     public static final double ARM_HOLD_DOWN = 0;
-    public static final double ARM_HOLD_UP = 0;
+    public static final double ARM_HOLD_UP = 0.01;
   }
 
   public static final class ClimberConstants {
     public static final int CLIMBER_MOTOR_ID = 7;
     public static final int CLIMBER_MOTOR_CURRENT_LIMIT = 60;
     public static final double CLIMBER_MOTOR_VOLTAGE_COMP = 12;
-    public static final double CLIMBER_SPEED_DOWN = -1.6;
-    public static final double CLIMBER_SPEED_UP = 1.6;
+    public static final double CLIMBER_SPEED_DOWN = -1.8;
+    public static final double CLIMBER_SPEED_UP = 1.8;
   }
 
   public static final class DriverConstants {
