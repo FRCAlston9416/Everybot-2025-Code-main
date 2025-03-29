@@ -42,7 +42,7 @@ public class ArmSubsystem extends SubsystemBase {
     armConfig.idleMode(IdleMode.kBrake);
     armMotor.configure(armConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
-    pid = new PIDController(0.05, 0, 0);
+    pid = new PIDController(0.07, 0, 0);
     encoder = armMotor.getEncoder();
     }
 
@@ -60,7 +60,7 @@ public class ArmSubsystem extends SubsystemBase {
     }
 
     public void setArmTo(double position){
-        double speed = MathUtil.clamp(pid.calculate(encoder.getPosition(), position), -0.2, 0.2);
+        double speed = MathUtil.clamp(pid.calculate(encoder.getPosition(), position), -0.4, 0.4);
         armMotor.set(speed);
 
     }
