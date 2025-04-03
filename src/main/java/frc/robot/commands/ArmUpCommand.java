@@ -8,6 +8,7 @@ import frc.robot.Constants.ArmConstants;
 import frc.robot.subsystems.ArmSubsystem;
 import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.math.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An ArmUpCommand that uses an Arm subsystem. */
@@ -36,7 +37,8 @@ public class ArmUpCommand extends Command {
   @Override
   public void execute() {
     //m_arm.runArm(ArmConstants.ARM_SPEED_UP);
-    m_arm.setArmTo(0);
+    m_arm.setArmTo(0, .09);
+    
   }
 
   // Called once the command ends or is interrupted.
