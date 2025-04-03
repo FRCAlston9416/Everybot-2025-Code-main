@@ -37,7 +37,6 @@ public class ArmDownCommand extends Command {
     m_arm.setArmTo(-8,0.5);
 
 
-
   }
 
   // Called once the command ends or is interrupted.
@@ -45,8 +44,8 @@ public class ArmDownCommand extends Command {
   // When the next command is caled it will override this command
   @Override
   public void end(boolean interrupted) {
-    // m_arm.runArm(ArmConstants.ARM_HOLD_DOWN);
-    m_arm.setArmTo(-8,0.5);
+     m_arm.runArm(ArmConstants.ARM_HOLD_DOWN);
+    // m_arm.setArmTo(-8,0.5);
 
   }
 
