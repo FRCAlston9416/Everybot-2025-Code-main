@@ -94,10 +94,16 @@ public class RobotContainer {
         m_driverController.y().whileTrue(new CoralStackCommand(m_roller));
 
         // Climber commands (direction depends on winch winding)
-        m_driverController.pov(0).whileTrue(new ClimberUpCommand(m_climber));
-        m_driverController.pov(180).whileTrue(new ClimberDownCommand(m_climber));
+        m_driverController.pov(180).whileTrue(new ClimberUpCommand(m_climber));
+        m_driverController.pov(0).whileTrue(new ClimberDownCommand(m_climber));
     }
-
+    private double adjustController(double value, double deadband) {
+        if (Math.abs(value) <= deadband) {
+            return 0.0;
+        }
+        double sign = Math.signum(value);
+        return (value - sign * deadband) / (1.0 - deadband);
+    }
     /**
      * Sets up the autonomous command chooser for selection via SmartDashboard.
      */

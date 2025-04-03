@@ -29,6 +29,7 @@ public final class Constants {
     // Movement settings
     public static final double SLOW_MODE_MOVE = 0.2;
     public static final double SLOW_MODE_TURN = 0.2;
+    
   }
 
   /**
@@ -84,5 +85,6 @@ public final class Constants {
    */
   public static final class DriverConstants {
     public static final int DRIVER_CONTROLLER_PORT = 0;
+    public static final double DEADBAND_THRESHOLD = 0.1;
   }
 }
