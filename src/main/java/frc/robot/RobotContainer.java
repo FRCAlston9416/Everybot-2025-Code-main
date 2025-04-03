@@ -20,6 +20,7 @@ import frc.robot.commands.ArmDownCommand;
 import frc.robot.commands.ArmUpCommand;
 import frc.robot.commands.ClimberDownCommand;
 import frc.robot.commands.ClimberUpCommand;
+import frc.robot.commands.ConstantArmDownSpeed;
 import frc.robot.commands.CoralOutCommand;
 import frc.robot.commands.CoralStackCommand;
 import frc.robot.commands.DriveCommand;
@@ -88,6 +89,8 @@ public class RobotContainer {
         // Arm commands (passively held after execution)
         m_driverController.pov(90).whileTrue(new ArmUpCommand(m_arm));
         m_driverController.pov(270).whileTrue(new ArmDownCommand(m_arm));
+        m_driverController.leftTrigger(0.2).whileTrue(new ConstantArmDownSpeed(m_arm));
+
 
         // Coral scoring commands
         m_driverController.x().whileTrue(new CoralOutCommand(m_roller));

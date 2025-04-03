@@ -58,8 +58,8 @@ public final class Constants {
     public static final double ARM_MOTOR_VOLTAGE_COMP = 10;
 
     // Arm speeds
-    public static final double ARM_SPEED_DOWN = -0.1;
-    public static final double ARM_SPEED_UP = 0.1;
+    public static final double ARM_SPEED_DOWN = -0.3;
+    public static final double ARM_SPEED_UP = 0.3;
 
     // Arm hold positions
     public static final double ARM_HOLD_DOWN = 0;
